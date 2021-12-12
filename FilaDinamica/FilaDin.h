@@ -13,3 +13,4 @@ int fila_vazia(Fila *fi);
 int inserir_fila(Fila *fi, struct aluno al);
 int remover_fila(Fila *fi);
 int consulta_fila(Fila *fi, struct aluno *al);
+void imprime_fila(Fila *fi);

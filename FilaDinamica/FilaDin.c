@@ -1,12 +1,14 @@
 #include "FilaDin.h"
 #include <stdlib.h>
+#include <stdio.h>
+
 struct fila{
     struct elemento *inicio, *final;
 };
 struct elemento
 {
     struct aluno dados;
-    struct elemnto *prox;
+    struct elemento *prox;
 };
 
 typedef struct elemento Elem;
@@ -71,4 +73,17 @@ int consulta_fila(Fila *fi, struct aluno *al){
     if(!fi || fila_vazia(fi)) return 0;
     *al = fi->inicio->dados;
     return 1;
+}
+void imprime_fila(Fila *fi){
+    Elem *no = (Elem*) malloc(sizeof (Elem*));
+    no = fi->inicio;
+    while(no){
+        printf("O estudante %s, de matricula %i\n", no->dados.nome, no->dados.matricula);
+        printf("Teve as notas:\n");
+        printf("Nota 1: %.2f\n", no->dados.n1);
+        printf("Nota 2: %.2f\n", no->dados.n2);
+        printf("Nota 3: %.2f\n", no->dados.n3);
+        no = no->prox;
+    }
+    
 }
