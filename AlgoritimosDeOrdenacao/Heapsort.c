@@ -2,18 +2,18 @@
 #include <stdlib.h>
 #include <math.h>
 
-void cria_heap(int* v,int inicio, int fim)
+void cria_heap(int* v,int i, int f)
 {
     int aux = v[i];
-    int j = inicio * 2 + 1;
-    while (j <= fim)
+    int j = i * 2 + 1;
+    while (j <= f)
     {
-        if(j < fim && v[j] < v[j+1]) j++;
+        if(j < f && (v[j] < v[j+1])) j++;
         if(aux < v[j]){
             v[i] = v[j];
             i = j;
             j = 2 * i + 1;
-        }else j = fim + 1;
+        }else j = f + 1;
     }
     v[i] = aux;
      
