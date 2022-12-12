@@ -138,7 +138,6 @@ void busca_largura_Grafo(Grafo *gr, int ini, int *visitado){
     visitado[ini] = cont;
     while (IF != FF)
     {
-        printf("OK\n");
         IF = (IF + 1) % NV;
         vert = fila[IF];
         cont++;
